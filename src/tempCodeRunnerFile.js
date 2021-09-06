@@ -1,0 +1,1 @@
+console.table([[0, 1, '^^'],[0, '^^', 2],['^^', 1, 2]].flat().filter(x => x === "^^").length);
