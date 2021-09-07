@@ -14,7 +14,20 @@ import { NotImplementedError } from '../extensions/index.js';
  * For 00-1B-63-84-45-E6, the output should be true.
  *
  */
-export default function isMAC48Address(/* n */) {
-  throw new NotImplementedError('Not implemented');
+export default function isMAC48Address(n) {
+  var VRegExp = new RegExp(/^[\da-f]{2}-[\da-f]{2}-[\da-f]{2}-[\da-f]{2}-[\da-f]{2}-[\da-f]{2}/gi);
+  return VRegExp.test(n);
+  //throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 }
+
+
+console.log('00-1B-63-84-45-E6'.search(/[\da-z]{2}/gi));
+
+var VRegExp = new RegExp(/^[\da-f]{2}-[\da-f]{2}-[\da-f]{2}-[\da-f]{2}-[\da-f]{2}-[\da-f]{2}/gi);
+
+console.log(VRegExp.test('00-1B-63-84-45-E6'));
+console.log(VRegExp.test('Z1-1B-63-84-45-E6'));
+console.log(VRegExp.test('not a MAC-48 address'));
+console.log(VRegExp.test('FF-FF-FF-FF-FF-FF'));
+console.log(VRegExp.test('G0-00-00-00-00-00'));

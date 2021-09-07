@@ -16,5 +16,3 @@ export default function getEmailDomain(email) {
   // remove line with error and write your code here
 }
 
-// console.log("prettyandsimple@example.com".slice("prettyandsimple@example.com".search(/@/gi)));
-// console.log("very.unusual.@.unusual.com@usual.com".lastIndexOf("@"));
