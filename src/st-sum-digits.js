@@ -15,7 +15,7 @@ import { NotImplementedError } from '../extensions/index.js';
 export default function getSumOfDigits(n) {
   while (n > 9) {
     n = ("" + n).split("").reduce((a, b) => a + Number(b), 0)
-    console.log(n);
+
   }
   return n;
 
@@ -23,16 +23,3 @@ export default function getSumOfDigits(n) {
   // remove line with error and write your code here
 }
 
-
-/* function sumD(n) {
-  //s = 0;
-  while (n > 10) {
-    n = ("" + n).split("").reduce((a, b) => a + Number(b), 0)
-    console.log(n);
-  }
-  return n;
-}
-
-console.log(sumD(77777777777777));
-
-console.log(("" + 777777777777777).split("")); */
