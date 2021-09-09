@@ -11,7 +11,16 @@ import { NotImplementedError } from '../extensions/index.js';
  * For n = 152, the output should be 52
  *
  */
-export default function deleteDigit(/* n */) {
-  throw new NotImplementedError('Not implemented');
+export default function deleteDigit(n) {
+
+  let masOut = [];
+  let str = ''+n;
+  for(let i=0; i< str.length; i++){
+      masOut.push(str.split('').filter((item, index)=> index !==i).join(''));
+  }
+  console.table(masOut);
+   return Math.max(...masOut.map(Number));
+  // return masOut;
+  // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 }
