@@ -1,13 +1,13 @@
-let str1 = 'zzzz'.split('');
-let str2 = 'zzzzzzz'.split('');
-let masOut = [];
-
-for (let i in str1){
-  console.log(str1[i], '<--->',str2.indexOf(str1[i]));
-  if (str2.indexOf(str1[i])>-1){
-    masOut.push(str1[i]);
-    str2.splice(str2.indexOf(str1[i]),1);
-    //console.table(str2);
+function test(sampleActivity) {
+  const MODERN_ACTIVITY = 15;
+  const HALF_LIFE_PERIOD = 5730;
+  if (typeof sampleActivity !== 'string' ||
+    !/^[\d]+\.?[\d]*/.test(sampleActivity) ||
+    parseFloat(sampleActivity) <= 0 ||
+    parseFloat(sampleActivity) > MODERN_ACTIVITY) {
+    return false;
+  } else {
+    return Math.ceil(Math.log(MODERN_ACTIVITY / +sampleActivity) / (Math.log(2) / HALF_LIFE_PERIOD));
   }
 }
-console.table(masOut);
+console.log(test(['1']));

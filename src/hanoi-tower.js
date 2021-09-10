@@ -22,3 +22,15 @@ objHanoi.seconds = Math.floor(3600/turnsSpeed*objHanoi.turns);
   // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
 }
+
+
+/* left blank for unlimited creativity :) */
+const  multiply_all = function multiplyALL (mas){
+  return function (n){
+     return mas.map(a=>a*2)
+   }
+   }
+ 
+
+
+   console.table(multiply_all([1,2,3])(2))
