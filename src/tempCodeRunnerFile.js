@@ -1,13 +1,14 @@
-function test(sampleActivity) {
-  const MODERN_ACTIVITY = 15;
-  const HALF_LIFE_PERIOD = 5730;
-  if (typeof sampleActivity !== 'string' ||
-    !/^[\d]+\.?[\d]*/.test(sampleActivity) ||
-    parseFloat(sampleActivity) <= 0 ||
-    parseFloat(sampleActivity) > MODERN_ACTIVITY) {
-    return false;
-  } else {
-    return Math.ceil(Math.log(MODERN_ACTIVITY / +sampleActivity) / (Math.log(2) / HALF_LIFE_PERIOD));
+let masFiles = ['doc', 'doc', 'image', 'doc(1)', 'doc'];
+let masObj = {};
+for (let i of masFiles){
+  console.log(i);
+  if (masObj[i]){
+    masObj[`${i}(${masObj[i]})`] = 1;
+    masObj[i] +=1;
+  }else{
+    masObj[`${i}`] = 1;
   }
+
 }
-console.log(test(['1']));
+console.table(Object.keys(masObj));
+console.log(masObj);
